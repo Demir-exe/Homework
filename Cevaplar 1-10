@@ -1,0 +1,241 @@
+/* SORU 1 : System.out.println(Math.abs(-2147483648)) ekran çıktısında -2147483648 sayısını gördüm lakin Math.abs kütüphanesi içerisine yazdığımız değeri bize mutlak şeklinde alıp veriyor burda bize yine – değer vermesinin nedeni int değerinin max 2147483647 değerini almasıdır ve bu yüzden Math.abs( int ) girdiğim için bu şekilde – gördüm. Bunu düzeltmenin yoluda aynı kütüphanenin Math.abs( long ) şeklinde alıp değişken değerlerinide longa çevirmek.
+
+SORU 2 : Maven genellikle Java platformunda yer alan komutların derlenmesi sırasında kullanılan otomasyon ve inşa aracıdır. Bizlere proje yönetimi , derleme ve dağıtım gibi bir çok konuda yardım eder.
+Kütüphane : Bizlerin tekrar tekrar kod yazmamamızı , istediğimiz zaman önceden yazılmış olan kütüphaneyi çağırıp kod tekrarından kurtaran yöntem veya kodlar kümesi diyelim.
+
+API yani Uygulama programlama arayüzü : anladığım kadarıyla iki programın veya uygulamanın veya yazılımın aralarında haberleşmesini sağlayan bir arayüzdür. Buna en güzel örnek bir web sitesinin alış veriş için ödeme ağı API entegre edilmesi diyebiliriz. Sanırım en büyük katkılarından biri neredeyse her yazılımı bir birine bağlayabilmesi. Tabi ki bunun gibi daha bir çok önemli noktası var. Üçüncü Taraf Hizmetlere Erişim , yazılımı daha hızlı geliştirme  vs.. */
+
+
+
+
+
+
+
+
+
+
+
+
+//SORU 3 : 
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i=0;i<10;i++)
+        System.out.println("MERHABA");
+    }
+}
+
+//SORU 4 : 
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String secim; // kullanıcın seçeçeği işlem
+        int x, y; // x ve y işlem görecek sayılar
+        String title= "***  İŞLEM  SEÇİN  ***";
+        // işlem seçim yeri
+        secim= JOptionPane.showInputDialog(null,"1-TOPLA\n2-ÇIKAR\n3-ÇARP\n4-BÖL",title,1);
+         int l = Integer.parseInt(secim); // kullanıcın girdisini tutuyor.
+        while ( l<1 || l>4 ) {
+         secim= JOptionPane.showInputDialog(null,"1-TOPLA\n2-ÇIKAR\n3-ÇARP\n4-BÖL",title,1);
+          l = Integer.parseInt(secim);       }
+
+        switch (secim)
+        {
+            case "1" : {
+               String input1 = JOptionPane.showInputDialog(null, "Toplanacak 1. sayınızı girin", "***TOPLAMA***", 1);
+               String input2 = JOptionPane.showInputDialog(null, "Toplanacak 2. sayınızı girin", "***TOPLAMA***", 1);
+               x = Integer.parseInt(input1);
+               y = Integer.parseInt(input2);
+               JOptionPane.showMessageDialog(null,"Çıkarma = "+ (x-y)); break ; }
+
+            case "2" : {String input1 = JOptionPane.showInputDialog(null, "1. sayınızı girin", "***ÇIKARMA***", 1);
+                String input2 = JOptionPane.showInputDialog(null, "2. sayınızı girin", "***ÇIKARMA***", 1);
+                x = Integer.parseInt(input1);
+                y = Integer.parseInt(input2);
+                JOptionPane.showMessageDialog(null,"Sonuç = "+ (x-y)); break ;}
+
+            case "3" : {String input1 = JOptionPane.showInputDialog(null, "1. sayınızı girin", "***ÇARPMA***", 1);
+                String input2 = JOptionPane.showInputDialog(null, "2. sayınızı girin", "***ÇARPMA***", 1);
+                x = Integer.parseInt(input1);
+                y = Integer.parseInt(input2);
+                JOptionPane.showMessageDialog(null,"Sonuç = "+ (x*y)); break ;}
+
+            case "4" : {String input1 = JOptionPane.showInputDialog(null, "1. sayınızı girin", "***BÖLME***", 1);
+                String input2 = JOptionPane.showInputDialog(null, "2. sayınızı girin", "***BÖLME***", 1);
+                float k = Integer.parseInt(input1); // bölünen sayı
+                float z = Integer.parseInt(input2); // bölen sayı
+                JOptionPane.showMessageDialog(null,"Sonuç = "+ (k/z)); break ;}
+
+            }
+ }
+}
+
+//SORU 5 : 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("1. Sayınızı girin ");
+        int num1 = girdi.nextInt();
+        System.out.print("2. Sayınızı girin ");
+        int num2 = girdi.nextInt();
+        System.out.print("3. Sayınızı girin ");
+        int num3 = girdi.nextInt();
+        if (num1 == num2 && num1 == num3)
+            System.out.printf("%d = %d = %d", num2, num3, num1);
+        if (num1 == num2 || num1 == num3) {
+            if (num1 == num2 && num1 > num3)
+                System.out.printf("%d = %d > %d", num1, num2, num3);
+            if (num1 == num2 && num1 < num3)
+                System.out.printf("%d = %d < %d", num1, num2, num3);
+            if (num1 > num2 && num1 == num3)
+                System.out.printf("%d = %d > %d", num1, num3, num2);
+            if (num1 < num2 && num1 == num3)
+                System.out.printf("%d = %d < %d", num1, num3, num2);
+            if (num1 < num2 && num2 == num3)
+                System.out.printf("%d = %d > %d", num3, num2, num1);
+            if (num1 > num2 && num2 == num3)
+                System.out.printf("%d = %d < %d", num3, num2, num1);  }
+        if ( num1 > num2 && num3>num1)  System.out.printf("%d < %d < %d", num2, num1, num3);
+        if ( num2 > num1 && num3>num2)  System.out.printf("%d < %d < %d", num1, num2, num3);
+        if ( num3 > num1 && num2>num3)  System.out.printf("%d < %d < %d", num1, num3, num2);
+        if ( num3 > num2 && num1>num3)  System.out.printf("%d < %d < %d", num2, num3, num1);
+        if ( num1 > num3 && num2>num1)  System.out.printf("%d < %d < %d", num3, num1, num2);
+        if ( num2 > num3 && num1>num2)  System.out.printf("%d < %d < %d", num3, num2, num1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//SORU 6 : 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("1. Sayınızı girin ");
+        int num1 = girdi.nextInt();
+        System.out.print("2. Sayınızı girin ");
+        int num2 = girdi.nextInt();
+        System.out.print("3. Sayınızı girin ");
+        int num3 = girdi.nextInt();
+        int orta = orta( num1, num2, num3);
+
+        System.out.println("Ortanca sayı: " + orta);
+    }
+    public static int orta(int a, int b, int c) {
+        if ((a >= b && a <= c) || (a <= b && a >= c)) {
+            return a;
+        } else if ((b >= a && b <= c) || (b <= a && b >= c)) {
+            return b;
+        } else {
+            return c; }
+    }
+}
+
+//SORU : 7 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+
+        Scanner girdi = new Scanner(System.in);
+        // kullanıcıdan alınan sayılar
+        System.out.print("1. Sayınızı girin ");
+        int num1 = girdi.nextInt();
+        System.out.print("2. Sayınızı girin ");
+        int num2 = girdi.nextInt();
+        System.out.print("3. Sayınızı girin ");
+        int num3 = girdi.nextInt();
+        // GELEN GİRDİLERİ FONKSİYONA YOLLAR
+        int sonuc1 = signum(num1);
+        int sonuc2 = signum(num2);
+        int sonuc3 = signum(num3);
+
+        System.out.println("Sayı 1 için sonuç: " + sonuc1);
+        System.out.println("Sayı 2 için sonuç: " + sonuc2);
+        System.out.println("Sayı 3 için sonuç: " + sonuc3);
+    }
+    // girdileri değerlerini döndürecek fonksiyon
+    public static int signum(int x) {
+        if (x > 0) {
+            return 1; // Pozitif döndürecek
+        } else if (x < 0) {
+            return -1; } // Negatif döndürecek
+         else {
+            return 0; } // sıfır döndürecek
+    }
+}
+//SORU 8 : 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("Lütfen sayınızı giriniz =  ");
+        int n = girdi.nextInt(); // kullanıcıdan alınan değer
+        // üçgenin yukarı tepesini çizer
+        for (int  i=1 ; i<=n ;i++) // her bir yıldızın bulunduğu satırı sayar
+        {   for (int m=i;m<n;m++) // satıra göre boşluk bırakır
+            System.out.print(" ");
+            for ( int a=0;a<(2*i-1);a++)    System.out.print("*"); // satıra göre yıldız atar
+            System.out.print("\n"); // al satıra geçer
+        }
+        // üçgenin alt tepesini çizer
+        for (int  i=(n-1) ; i>0 ;i--) // satır değerlerini temsil eder 
+        {   for (int m=n;m>i;m--)  // satıra göre boşluk ataması yapar
+            System.out.print(" ");
+            for ( int a=0;a<(2*i-1);a++)    System.out.print("*"); // satıra göre yıldız atar
+            System.out.print("\n"); // al satıra geçer
+        }
+    }
+}
+
+//SORU 9 :
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("Lütfen süreyi saniye cinsinden girin = ");
+        long second = girdi.nextLong();
+        long saat = second / 3600;
+        long x = second % 3600;
+        long dakika = x /60;
+        long saniye = x %60;
+
+        if (saat==0 && dakika==0 && saniye==0)
+            return;
+        System.out.print("Saat = "+saat);
+        System.out.print("\nDakika = "+dakika);
+        System.out.print("\nSaniye = "+saniye);
+    }
+}
+
+
+
+
+
+
+//SORU 10 :
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("Sayınızı girin = ");
+        int num= girdi.nextInt();
+        for (int i=2;i<=num;i++) {
+            while ((num % i) == 0) {
+                System.out.print(" " + i);
+                num = num / i; }
+        }
+    }
+}
+
+
