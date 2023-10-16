@@ -6,16 +6,6 @@ Kütüphane : Bizlerin tekrar tekrar kod yazmamamızı , istediğimiz zaman önc
 API yani Uygulama programlama arayüzü : anladığım kadarıyla iki programın veya uygulamanın veya yazılımın aralarında haberleşmesini sağlayan bir arayüzdür. Buna en güzel örnek bir web sitesinin alış veriş için ödeme ağı API entegre edilmesi diyebiliriz. Sanırım en büyük katkılarından biri neredeyse her yazılımı bir birine bağlayabilmesi. Tabi ki bunun gibi daha bir çok önemli noktası var. Üçüncü Taraf Hizmetlere Erişim , yazılımı daha hızlı geliştirme  vs.. */
 
 
-
-
-
-
-
-
-
-
-
-
 //SORU 3 : 
 public class Main {
     public static void main(String[] args) {
@@ -111,11 +101,6 @@ public class Main {
 
 
 
-
-
-
-
-
 //SORU 6 : 
 import java.util.Scanner;
 public class Main {
@@ -141,6 +126,8 @@ public class Main {
             return c; }
     }
 }
+
+
 
 //SORU : 7 
 import java.util.Scanner;
@@ -174,6 +161,8 @@ public class Main {
             return 0; } // sıfır döndürecek
     }
 }
+
+
 //SORU 8 : 
 import java.util.Scanner;
 public class Main {
@@ -217,9 +206,6 @@ public class Main {
         System.out.print("\nSaniye = "+saniye);
     }
 }
-
-
-
 
 
 
