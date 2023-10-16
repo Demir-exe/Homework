@@ -224,4 +224,36 @@ public class Main {
     }
 }
 
+// SORU 11 : 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] strings) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("Yüksekliği girin = ");
+       int boy = girdi.nextInt(); // yükseklik girdisi
+        System.out.print("Genişliği girin = ");
+       int en = girdi.nextInt(); // genişlik girdisi
+        int k=0; // k yıldızların geleceği yeri kontrol eder
+       for (int i=0;i<boy;i++)
+       {    System.out.print("|");
+
+           for ( int m=0;m<en;m++){
+
+               if(k==m){ System.out.print("*"); // uygun yere yıldız atama yapar
+               k++;
+                   break;
+               }
+               else  System.out.print(" "); // yıldız atama yapılmazsa önüne 1 boşluk bırak
+           }
+            // grekli boşlukları atar
+            for (int n=0;n<en-k;n++)
+            System.out.print(" ");
+            System.out.print("|\n");
+            if (k==en) k=0; // tekrar yıldız  atımını 1 sütündan başlatır
+        }
+     }
+}
+
+
+
 
