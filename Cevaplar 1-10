@@ -256,4 +256,52 @@ public class Main {
 
 
 
+SORU 12 : 
+import java.util.Scanner;
+public class Main {
+    // girilen sayıya kadar olan tüm asalları bulur
+    public static void asalbul(int a) {
+    int i=2,j,say;
+    while (i<a)
+    {
+        j=2;
+        say=0;
+        while (j<i) // sayıları tek tek gezerken asal olmayanları eler
+        {
+            if (i%j==0) say++;
+            j++;
+        }
+        // i sayısı asal ise bunu girdi sayısından çıkarır
+        if (say==0)  {  
+            int num2=a-i;
+            // her iki sayıda asal ise bunu toplam şeklinde yazdırır           
+            if (asalmi(num2)) {
+                System.out.printf("%d + %d ",i,num2); break;}
+        }
+        i++;
+    }
+   }
+    // girdiden çıkarılan asal sayının sonucunda çıkan sayıda asal mı diye kontrol eder
+public static boolean asalmi(int b)
+{
+
+    int i=2,j,say;
+    while (i<b)
+    {
+        while (b%i==0)
+            return false;
+            i++;
+    }
+    return true;
+}
+    public static void main(String[] strings) {
+        Scanner girdi = new Scanner(System.in);
+        System.out.print("Çift sayı girin = ");
+        int num = girdi.nextInt(); // kullanıcının girdisini alır
+        asalbul(num); 
+     }
+}
+
+
+
 
